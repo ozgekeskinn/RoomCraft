@@ -1,0 +1,186 @@
+.planner-page {
+    min-height: 100vh;
+    padding-block: var(--spacing-4);
+    background-color: var(--color-background);
+}
+
+/* Ana sayfadaki container'dan biraz daha geniş */
+.planner-page__container {
+    max-width: 1800px;
+    width: 100%;
+    padding-inline: var(--spacing-3);
+}
+
+/* main workspace */
+.planner-page__workspace {
+    margin-top: var(--spacing-4);
+}
+
+/* left sidebar */
+.planner-page__sidebar {
+    min-width: 0;
+    min-height: 650px;
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+/* room canvas area */
+.planner-page__canvas-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 650px;
+
+    padding: var(--spacing-4);
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+    overflow: auto;
+}
+
+/* right properties panel */
+.planner-page__properties {
+    min-width: 0;
+    min-height: 650px;
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+/* cost summary area */
+.planner-page__cost {
+    width: 100%;
+    margin-top: var(--spacing-4);
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* responsive */
+@media (max-width: 1199px) {
+    .planner-page__workspace {
+        grid-template-columns: 220px minmax(0, 1fr) 260px;
+        gap: var(--spacing-3);
+    }
+
+    .planner-page__sidebar,
+    .planner-page__canvas-area,
+    .planner-page__properties {
+        min-height: 600px;
+    }
+}
+
+/* tablet */
+@media (max-width: 991px) {
+    .planner-page__workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-page__sidebar,
+    .planner-page__properties {
+        min-height: auto;
+    }
+
+    .planner-page__canvas-area {
+        min-height: 550px;
+        overflow: auto;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .planner-page {
+        padding-block: var(--spacing-3);
+    }
+
+    .planner-page__workspace {
+        gap: var(--spacing-3);
+        margin-top: var(--spacing-3);
+    }
+
+    .planner-page__canvas-area {
+        min-height: 450px;
+        padding: var(--spacing-3);
+    }
+
+    .planner-page__cost {
+        margin-top: var(--spacing-3);
+    }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+    .planner-page__canvas-area {
+        min-height: 400px;
+        padding: var(--spacing-2);
+    }
+}
+
+/* room form modal */
+.planner-page__modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--spacing-5);
+
+    background-color: rgba(20, 25, 22, 0.58);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    overflow-y: auto;
+}
+
+.planner-page__modal {
+    width: min(100%, 680px);
+    margin: auto;
+    animation: planner-modal-open 0.22s ease;
+}
+
+@keyframes planner-modal-open {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 767px) {
+    .planner-page__modal-overlay {
+        align-items: flex-start;
+        padding: var(--spacing-4);
+    }
+
+    .planner-page__modal {
+        margin-block: var(--spacing-4);
+    }
+}

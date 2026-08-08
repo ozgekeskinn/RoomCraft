@@ -1,0 +1,226 @@
+.planner-toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+
+    width: 100%;
+
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3) var(--spacing-4);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.planner-toolbar__back-button{
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex-shrink: 0;
+    padding: var(--spacing-2);
+
+    font-family: inherit;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+
+    background: transparent;
+    background-color: var(--color-surface);
+    border: 0;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 
+        color var(--transition-normal),
+        background-color var(--transition-normal);
+}
+
+.planner-toolbar__back-button:hover{
+    color: var(--color-text-primary);
+    background-color: var(--color-primary-soft);
+}
+
+.planner-toolbar__design-info{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    min-width: 0;
+}
+
+.planner-toolbar__info-item{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    white-space: nowrap;
+}
+
+.planner-toolbar__info-label{
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.planner-toolbar__info-value{
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.planner-toolbar__edit-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    color: var(--color-text-secondary);
+    background-color: transparent;
+
+    border: 0;
+    border-radius: var(--radius-circle);
+    cursor: pointer;
+
+    transition: 
+        color var(--transition-normal)
+        background-color var(--transition-normal);
+}
+
+.planner-toolbar__edit-button:hover{
+    background-color: var(--color-primary);
+    color: var(--color-primary-soft);
+}
+
+.planner-toolbar__tools{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex-shrink: 0;
+}
+
+.planner-toolbar__tool-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+
+    padding: var(--spacing-2) var(--spacing-3);
+
+    font-family: inherit;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    background-color: var(--color-surface);
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        color var(--transition-normal),
+        background-color var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.planner-toolbar__tool-button:hover{
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+    border-color: var(--color-border);
+}
+
+.planner-toolbar__tool-button--active{
+    color: var(--color-primary);
+    background-color: var(--color-primary-soft);
+    border-color: var(--color-primary);   
+}
+
+.planner-toolbar__zoom{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.planner-toolbar__zoom-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+    border: 0;
+
+    color: var(--color-text-secondary);
+    background-color: transparent;   
+
+    cursor: pointer;
+    transition: 
+        color var(--transition-normal)
+        background-color var(--transition-normal);
+}
+
+.planner-toolbar__zoom-button:hover{
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+}
+
+.planner-toolbar__zoom-value{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 52px;
+    height: 34px;
+
+    padding-inline: var(--spacing-2);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);  
+    color: var(--color-text-primary);
+    border-right: 1px solid var(--color-border-light);
+    border-left: 1px solid var(--color-border-light);
+}
+
+.planner-toolbar__fullscreen-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    color: var(--color-text-secondary);
+    background-color: transparent;
+
+    border: 0;
+    border-left: 1px solid var(--color-border-light);
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-normal),
+        background-color var(--transition-normal);
+}
+
+.planner-toolbar__fullscreen-button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-soft);
+}
+
+.planner-toolbar button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

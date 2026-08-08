@@ -1,0 +1,27 @@
+.furniture-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.furniture-item--selected{
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.furniture-item__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.furniture-item__name {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-primary);
+    pointer-events: none;
+}
