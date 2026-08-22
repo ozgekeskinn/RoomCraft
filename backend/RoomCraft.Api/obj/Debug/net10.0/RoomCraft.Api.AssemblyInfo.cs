@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoomCraft.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ef384611979b5c519227b2bf57d699f3cc643ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7133945e2e92a63d36340998c0fba56c1ba98a95")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoomCraft.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoomCraft.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
