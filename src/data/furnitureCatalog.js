@@ -9,6 +9,18 @@ import rugImage from "../assets/images/furniture/rug.png";
 import doorImage from "../assets/images/furniture/door.png";
 import windowImage from "../assets/images/furniture/window.png";
 
+// kuş bakışı görseller
+import singleBedTopView from "../assets/images/furniture/top-view/single-bed.png";
+import doubleBedTopView from "../assets/images/furniture/top-view/double-bed.png";
+import sofaTopView from "../assets/images/furniture/top-view/sofa.png";
+import deskTopView from "../assets/images/furniture/top-view/desk.png";
+import diningTableTopView from "../assets/images/furniture/top-view/dining-table.png";
+import wardrobeTopView from "../assets/images/furniture/top-view/wardrobe.png";
+import televisionTopView from "../assets/images/furniture/top-view/television.png";
+import rugTopView from "../assets/images/furniture/top-view/rug.png";
+import doorTopView from "../assets/images/furniture/top-view/door.png";
+import windowTopView from "../assets/images/furniture/top-view/window.png";
+
 const furnitureCatalog = [
     {
         id: "single-bed",
@@ -20,7 +32,9 @@ const furnitureCatalog = [
         minHeight: 180,
         price: 8000,
         category: "yatak-odasi",
+
         image: singleBedImage,
+        topViewImage: singleBedTopView,
     },
 
     {
@@ -33,7 +47,9 @@ const furnitureCatalog = [
         minHeight: 190,
         price: 18000,
         category: "yatak-odasi",
+
         image: doubleBedImage,
+        topViewImage: doubleBedTopView,
     },
 
     {
@@ -46,7 +62,9 @@ const furnitureCatalog = [
         minHeight: 70,
         price: 22000,
         category: "oturma",
+        
         image: sofaImage,
+        topViewImage: sofaTopView,
     },
 
     {
@@ -59,7 +77,9 @@ const furnitureCatalog = [
         minHeight: 50,
         price: 6000,
         category: "oturma",
+        
         image: deskImage,
+        topViewImage: deskTopView,
     },
 
     {
@@ -72,7 +92,9 @@ const furnitureCatalog = [
         minHeight: 70,
         price: 12000,
         category: "oturma",
+
         image: diningTableImage,
+        topViewImage: diningTableTopView,
     },
 
     {
@@ -85,7 +107,9 @@ const furnitureCatalog = [
         minHeight: 50,
         price: 15000,
         category: "depolama",
+
         image: wardrobeImage,
+        topViewImage: wardrobeTopView,
     },
 
     {
@@ -98,7 +122,9 @@ const furnitureCatalog = [
         minHeight: 10,
         price: 20000,
         category: "elektronik",
+
         image: televisionImage,
+        topViewImage: televisionTopView,
     },
 
     {
@@ -111,7 +137,9 @@ const furnitureCatalog = [
         minHeight: 80,
         price: 4000,
         category: "dekorasyon",
+
         image: rugImage,
+        topViewImage: rugTopView,
     },
 
     {
@@ -124,7 +152,9 @@ const furnitureCatalog = [
         minHeight: 10,
         price: 7000,
         category: "yapisal",
+
         image: doorImage,
+        topViewImage: doorTopView,
     },
 
     {
@@ -137,7 +167,9 @@ const furnitureCatalog = [
         minHeight: 10,
         price: 5000,
         category: "yapisal",
+        
         image: windowImage,
+        topViewImage: windowTopView,
     },
 ];
 

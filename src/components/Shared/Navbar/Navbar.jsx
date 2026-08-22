@@ -1,105 +1,153 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-import Logo from '../../../assets/images/logo.png';
-import './Navbar.css';
+import Logo from "../../../assets/images/logo.png";
+import "./Navbar.css";
 
 export default function Navbar({
     currentPage,
     onPageChange,
-}){
+    onNewDesign,
+}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    function toggleMenu(){
+    function toggleMenu() {
         setIsMenuOpen((prev) => !prev);
     }
 
-    function closeMenu(){
+    function closeMenu() {
         setIsMenuOpen(false);
+    }
+
+    function navigateTo(page) {
+        onPageChange(page);
+        closeMenu();
+    }
+
+    function handleNewDesignClick() {
+        onNewDesign();
+        closeMenu();
     }
 
     return (
         <header className="navbar">
             <div className="page-container navbar__container">
+
+                {/* Logo */}
                 <button
-                    type='button'
-                    className='navbar__brand'
-                    onClick={() => {
-                        onPageChange("home");
-                        closeMenu();
-                    }}
-                    aria-label='Ana sayfaya dön'
+                    type="button"
+                    className="navbar__brand"
+                    onClick={() => navigateTo("home")}
+                    aria-label="Ana sayfaya dön"
                 >
                     <img
                         src={Logo}
-                        alt='RoomCraft'
-                        className='navbar__logo'
+                        alt="RoomCraft"
+                        className="navbar__logo"
                     />
                 </button>
 
-                <nav className="navbar__menu" aria-label="Ana menü">
-                    <button 
-                        type='button' 
+
+                {/* Desktop Menü */}
+                <nav
+                    className="navbar__menu"
+                    aria-label="Ana menü"
+                >
+                    <button
+                        type="button"
                         className={`navbar__link ${
                             currentPage === "home"
                                 ? "navbar__link--active"
                                 : ""
                         }`}
-                        onClick={() => onPageChange("home")}
+                        onClick={() => navigateTo("home")}
                     >
                         Anasayfa
                     </button>
 
                     <button
-                        type='button'
+                        type="button"
                         className={`navbar__link ${
                             currentPage === "saved-designs"
                                 ? "navbar__link--active"
                                 : ""
                         }`}
-                        onClick={() => onPageChange("saved-designs")}
+                        onClick={() =>
+                            navigateTo("saved-designs")
+                        }
                     >
                         Tasarımlarım
                     </button>
 
-                    <a href="#" className="navbar__link">
+                    <button
+                        type="button"
+                        className={`navbar__link ${
+                            currentPage === "templates"
+                                ? "navbar__link--active"
+                                : ""
+                        }`}
+                        onClick={() =>
+                            navigateTo("templates")
+                        }
+                    >
                         Hazır Şablonlar
-                    </a>
+                    </button>
 
-                    <a href="#" className="navbar__link">
+                    <button
+                        type="button"
+                        className={`navbar__link ${
+                            currentPage === "about"
+                                ? "navbar__link--active"
+                                : ""
+                        }`}
+                        onClick={() =>
+                            navigateTo("about")
+                        }
+                    >
                         Hakkımızda
-                    </a>
+                    </button>
                 </nav>
 
-                <button 
+
+                {/* Yeni Tasarım */}
+                <button
                     type="button"
                     className="btn-primary-custom navbar__button"
-                    onClick={() => {
-                        onPageChange("planner");
-                        closeMenu();
-                    }}
+                    onClick={handleNewDesignClick}
                 >
                     <span aria-hidden="true">+</span>
                     Yeni Tasarım
                 </button>
 
-                {/* mobil */}
+
+                {/* Mobil Menü Butonu */}
                 <button
-                    type='button'
-                    className='navbar__toggle'
+                    type="button"
+                    className="navbar__toggle"
                     onClick={toggleMenu}
-                    aria-label={isMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
+                    aria-label={
+                        isMenuOpen
+                            ? "Menüyü kapat"
+                            : "Menüyü aç"
+                    }
                     aria-expanded={isMenuOpen}
                 >
                     {isMenuOpen ? (
-                        <X size={24} aria-hidden="true" />
+                        <X
+                            size={24}
+                            aria-hidden="true"
+                        />
                     ) : (
-                        <Menu size={24} aria-hidden="true" />
+                        <Menu
+                            size={24}
+                            aria-hidden="true"
+                        />
                     )}
                 </button>
             </div>
 
-            {/* tablet */}
+
+            {/* Mobil / Tablet Menü */}
             {isMenuOpen && (
                 <div
                     className="navbar__overlay"
@@ -107,7 +155,9 @@ export default function Navbar({
                 >
                     <div
                         className="navbar__drawer"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(event) =>
+                            event.stopPropagation()
+                        }
                     >
                         <div className="navbar__drawer-header">
                             <img
@@ -134,54 +184,80 @@ export default function Navbar({
                             className="navbar__mobile-nav"
                             aria-label="Mobil menü"
                         >
-                            <a
-                                href="#"
-                                className="navbar__mobile-link navbar__mobile-link--active"
-                                onClick={closeMenu}
+                            <button
+                                type="button"
+                                className={`navbar__mobile-link ${
+                                    currentPage === "home"
+                                        ? "navbar__mobile-link--active"
+                                        : ""
+                                }`}
+                                onClick={() =>
+                                    navigateTo("home")
+                                }
                             >
                                 Anasayfa
-                            </a>
+                            </button>
 
-                            <a
-                                href="#"
-                                className="navbar__mobile-link"
-                                onClick={closeMenu}
+                            <button
+                                type="button"
+                                className={`navbar__mobile-link ${
+                                    currentPage === "saved-designs"
+                                        ? "navbar__mobile-link--active"
+                                        : ""
+                                }`}
+                                onClick={() =>
+                                    navigateTo(
+                                        "saved-designs"
+                                    )
+                                }
                             >
                                 Tasarımlarım
-                            </a>
+                            </button>
 
-                            <a
-                                href="#"
-                                className="navbar__mobile-link"
-                                onClick={closeMenu}
+                            <button
+                                type="button"
+                                className={`navbar__mobile-link ${
+                                    currentPage === "templates"
+                                        ? "navbar__mobile-link--active"
+                                        : ""
+                                }`}
+                                onClick={() =>
+                                    navigateTo(
+                                        "templates"
+                                    )
+                                }
                             >
                                 Hazır Şablonlar
-                            </a>
+                            </button>
 
-                            <a
-                                href="#"
-                                className="navbar__mobile-link"
-                                onClick={closeMenu}
+                            <button
+                                type="button"
+                                className={`navbar__mobile-link ${
+                                    currentPage === "about"
+                                        ? "navbar__mobile-link--active"
+                                        : ""
+                                }`}
+                                onClick={() =>
+                                    navigateTo("about")
+                                }
                             >
                                 Hakkımızda
-                            </a>
+                            </button>
 
                             <button
                                 type="button"
                                 className="btn-primary-custom navbar__mobile-button"
-                                onClick={() => {
-                                    onPageChange("planner");
-                                    closeMenu();
-                                }}
+                                onClick={handleNewDesignClick}
                             >
-                                <span aria-hidden="true">+</span>
+                                <span aria-hidden="true">
+                                    +
+                                </span>
                                 Yeni Tasarım
                             </button>
                         </nav>
                     </div>
                 </div>
             )}
-
         </header>
-    )
+    );
 }

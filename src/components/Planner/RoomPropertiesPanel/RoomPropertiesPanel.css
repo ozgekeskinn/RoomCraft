@@ -1,0 +1,81 @@
+.room-properties-panel {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border-light);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.room-properties-panel__title {
+    margin: 0 0 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.room-properties-panel__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.room-properties-panel__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 40px;
+    border-bottom: 1px solid #eeeeea;
+    font-size: 13px;
+}
+
+.room-properties-panel__row:last-child {
+    border-bottom: 0;
+}
+
+.room-properties-panel__row > span {
+    color: var(--color-text-secondary);
+}
+
+.room-properties-panel__row strong {
+    color: var(--color-text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.room-properties-panel__color {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.room-properties-panel__color-swatch {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #deded8;
+    border-radius: 5px;
+}
+
+.room-properties-panel__edit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 14px;
+    background-color: #fbfaf6;
+    color: var(--color-primary-dark);
+    border: 1px solid #ddd9cc;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.room-properties-panel__edit:hover {
+    background-color: var(--color-primary-soft);
+    border-color: #b9c6b5;
+}

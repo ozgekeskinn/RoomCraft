@@ -5,12 +5,14 @@ export default function MainLayout({
     children,
     currentPage,
     onPageChange,
+    onNewDesign,
 }) {
     return (
         <div className="main-layout">
             <Navbar 
                 currentPage={currentPage}
                 onPageChange={onPageChange}
+                onNewDesign={onNewDesign}
             />
             <main className="main-layout__content">
                 {children}

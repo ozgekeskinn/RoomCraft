@@ -7,6 +7,10 @@ import {
     Pencil,
     Plus,
     Ruler,
+    Save,
+    Undo2,
+    Redo2,
+    Trash2,
 } from "lucide-react";
 
 import "./PlannerToolbar.css";
@@ -15,6 +19,26 @@ export default function PlannerToolbar({
     onPageChange,
     room,
     onEditRoom, 
+    snapToGrid,
+    onToggleSnapToGrid,
+
+    onUndo,
+    onRedo,
+    canUndo,
+    canRedo,
+
+    zoomLevel,
+    onZoomIn,
+    onZoomOut,
+    onResetZoom,
+    onFitRoom,
+
+    onClearRoom,
+    canClearRoom,
+
+    onSaveDesign,
+    canSaveDesign,
+    isSaving,
 }){
     function formatRoomType(type){
         const roomTypes = {
@@ -95,6 +119,40 @@ export default function PlannerToolbar({
             <div className="planner-toolbar__tools">
                 <button
                     type="button"
+                    className="planner-toolbar__tool-button"
+                    onClick={onUndo}
+                    disabled={!canUndo}
+                    aria-label="Geri al"
+                    title="Geri Al"
+                >
+                    <Undo2
+                        size={17}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <span>Geri Al</span>
+                </button>
+
+                <button
+                    type="button"
+                    className="planner-toolbar__tool-button"
+                    onClick={onRedo}
+                    disabled={!canRedo}
+                    aria-label="İleri al"
+                    title="İleri Al"
+                >
+                    <Redo2
+                        size={17}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <span>İleri Al</span>
+                </button>
+
+                <button
+                    type="button"
                     className="planner-toolbar__tool-button planner-toolbar__tool-button--active"
                 >
                     <Grid3X3
@@ -108,7 +166,13 @@ export default function PlannerToolbar({
 
                 <button
                     type="button"
-                    className="planner-toolbar__tool-button planner-toolbar__tool-button--active"
+                    className={`planner-toolbar__tool-button ${
+                        snapToGrid
+                            ? "planner-toolbar__tool-button--active"
+                            : ""
+                    }`}
+                    onClick={onToggleSnapToGrid}
+                    aria-pressed={snapToGrid}
                 >
                     <Magnet
                         size={17}
@@ -131,6 +195,43 @@ export default function PlannerToolbar({
 
                     <span>Ölçüler</span>
                 </button>
+
+                <button
+                    type="button"
+                    className="planner-toolbar__tool-button planner-toolbar__tool-button--save"
+                    onClick={onSaveDesign}
+                    disabled={!canSaveDesign || isSaving}
+                    title="Tasarımı Kaydet"
+                >
+                    <Save
+                        size={17}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <span>
+                        {isSaving
+                            ? "Kaydediliyor..."
+                            : "Kaydet"
+                        }
+                    </span>
+                </button>
+
+                <button
+                    type="button"
+                    className="planner-toolbar__tool-button planner-toolbar__tool-button--danger"
+                    onClick={onClearRoom}
+                    disabled={!canClearRoom}
+                    title="Tüm Mobilyaları Temizle"
+                >
+                    <Trash2
+                        size={17}
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                    />
+
+                    <span>Temizle</span>
+                </button>
             </div>
 
             <div className="planner-toolbar__zoom">
@@ -138,6 +239,8 @@ export default function PlannerToolbar({
                     type="button"
                     className="planner-toolbar__zoom-button"
                     aria-label="Uzaklaştır"
+                    onClick={onZoomOut}
+                    disabled={zoomLevel <= 50}
                 >
                     <Minus
                         size={16}
@@ -147,13 +250,22 @@ export default function PlannerToolbar({
                 </button>
 
                 <span className="planner-toolbar__zoom-value">
-                    %100
+                    <button
+                        type="button"
+                        className="planner-toolbar__zoom-value"
+                        onClick={onResetZoom}
+                        title="%100'e dön"
+                    >
+                        %{zoomLevel}
+                    </button>
                 </span>
 
                 <button
                     type="button"
                     className="planner-toolbar__zoom-button"
                     aria-label="Yakınlaştır"
+                    onClick={onZoomIn}
+                    disabled={zoomLevel >= 150}
                 >
                     <Plus
                         size={16}
@@ -165,7 +277,8 @@ export default function PlannerToolbar({
                 <button
                     type="button"
                     className="planner-toolbar__fullscreen-button"
-                    aria-label="Tam ekran"
+                    aria-label="Ekrana Sığdır"
+                    onClick={onFitRoom}
                 >
                     <Maximize
                         size={17}

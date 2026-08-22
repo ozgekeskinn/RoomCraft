@@ -1,0 +1,141 @@
+.cost-summary {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+    align-items: center;
+
+    gap: 0;
+
+    margin-top: 16px;
+    padding: 18px 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e8e2d8;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 14px rgba(45, 40, 32, 0.04);
+}
+
+.cost-summary__title {
+    padding-right: 24px;
+}
+
+.cost-summary__title h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.cost-summary__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 0 24px;
+
+    border-left: 1px solid #ebe6de;
+}
+
+.cost-summary__item span {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.cost-summary__item strong {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.cost-summary__item--total strong {
+    font-size: 20px;
+}
+
+.cost-summary-wrapper {
+    margin-top: 16px;
+}
+
+.cost-summary-wrapper .cost-summary {
+    margin-top: 0;
+}
+
+.budget-summary {
+    margin-top: 12px;
+    padding: 18px 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e8e2d8;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 14px rgba(45, 40, 32, 0.04);
+}
+
+.budget-summary__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.budget-summary__header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.budget-summary__input-wrapper {
+    width: 240px;
+}
+
+.budget-summary__input-wrapper label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.budget-summary__details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 16px;
+}
+
+.budget-summary__details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 0 20px;
+    border-left: 1px solid #ebe6de;
+}
+
+.budget-summary__details > div:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.budget-summary__details span {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.budget-summary__details strong {
+    font-size: 16px;
+    color: var(--color-primary);
+}
+
+.budget-summary .progress {
+    height: 8px;
+    background-color: #eee9e1;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.budget-summary .progress-bar {
+    background-color: var(--color-primary);
+}

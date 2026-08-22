@@ -1,0 +1,64 @@
+@RoomCraft_Api_HostAddress = http://localhost:5243
+
+### Tüm tasarımları getir
+GET {{RoomCraft_Api_HostAddress}}/api/designs
+Accept: application/json
+
+### Yeni tasarım ekle
+POST {{RoomCraft_Api_HostAddress}}/api/designs
+Content-Type: application/json
+
+{
+  "designName": "Çalışma Odası Tasarımı",
+  "roomType": "Çalışma Odası",
+  "roomWidth": 3.5,
+  "roomHeight": 3,
+  "wallColor": "#F3EFE7",
+  "floorColor": "#D8C3A5",
+  "budget": 40000,
+  "totalCost": 18000
+}
+
+### Tasarım güncelle
+PUT {{RoomCraft_Api_HostAddress}}/api/designs/2
+Content-Type: application/json
+
+{
+  "designName": "Güncellenmiş Çalışma Odası",
+  "roomType": "Çalışma Odası",
+  "roomWidth": 4,
+  "roomHeight": 3.5,
+  "wallColor": "#FFFFFF",
+  "floorColor": "#D6C4A8",
+  "budget": 45000,
+  "totalCost": 22000
+}
+
+### Tasarım sil
+DELETE {{RoomCraft_Api_HostAddress}}/api/designs/2
+
+### Tasarıma mobilya ekle
+POST {{RoomCraft_Api_HostAddress}}/api/furniture
+Content-Type: application/json
+
+{
+  "designId": 1,
+  "catalogId": "sofa",
+  "name": "Koltuk",
+  "type": "sofa",
+  "category": "Oturma",
+  "x": 120,
+  "y": 80,
+  "width": 220,
+  "height": 90,
+  "rotation": 0,
+  "price": 22000,
+  "zIndex": 2,
+  "isLocked": false,
+  "wallSide": null
+}
+
+### Tasarımın mobilyalarını getir
+
+GET {{RoomCraft_Api_HostAddress}}/api/furniture/design/1
+Accept: application/json

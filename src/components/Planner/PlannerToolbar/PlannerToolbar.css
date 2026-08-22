@@ -140,6 +140,34 @@
     border-color: var(--color-primary);   
 }
 
+.planner-toolbar__tool-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.planner-toolbar__tool-button--danger {
+    color: #b42318;
+}
+
+.planner-toolbar__tool-button--danger:hover:not(:disabled) {
+    color: #ffffff;
+    background-color: #b42318;
+    border-color: #b42318;
+}
+
+.planner-toolbar__tool-button--save {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-soft);
+}
+
+.planner-toolbar__tool-button--save:hover:not(:disabled) {
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
 .planner-toolbar__zoom{
     display: flex;
     align-items: center;
@@ -176,21 +204,23 @@
     color: var(--color-primary);
 }
 
-.planner-toolbar__zoom-value{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.planner-toolbar__zoom-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
 
-    min-width: 52px;
-    height: 34px;
+.planner-toolbar__zoom-value {
+    border: none;
+    background: transparent;
 
-    padding-inline: var(--spacing-2);
+    padding: 0 6px;
 
+    font: inherit;
     font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-medium);  
+    font-weight: var(--font-weight-semibold);
+
     color: var(--color-text-primary);
-    border-right: 1px solid var(--color-border-light);
-    border-left: 1px solid var(--color-border-light);
+    cursor: pointer;
 }
 
 .planner-toolbar__fullscreen-button{
