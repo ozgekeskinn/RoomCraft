@@ -46,7 +46,7 @@ export default function PlannerPage({
     template,
     designId,
 }){
-    console.error(
+    console.log(
         "PLANNER'A GELEN DESIGN ID:",
         designId
     );

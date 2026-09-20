@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 RoomCraft_Teknik_Calisma_Notlari_README.md
+
+# .NET build files
+**/bin/
+**/obj/

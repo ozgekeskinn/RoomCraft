@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace RoomCraft.Api.Models;
 
 public class Design
