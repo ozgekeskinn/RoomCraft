@@ -1,4 +1,10 @@
-# RoomCraft – Interactive Room Planner
+<div align="center">
+  <img src="src/assets/images/logo.png" width="420" />
+
+  <h1>RoomCraft – Interactive Room Planner</h1>
+</div>
+
+---
 
 RoomCraft, kullanıcıların gerçek oda ölçülerine göre oda planı oluşturabildiği, mobilyaları kuş bakışı çalışma alanına ekleyip sürükleyebildiği, yeniden boyutlandırabildiği, döndürebildiği, katmanlarını yönetebildiği ve tasarım maliyetini bütçeyle birlikte takip edebildiği **full-stack bir oda yerleşim planlama uygulamasıdır**.
 Proje yalnızca görsel bir arayüzden oluşmaz. React tabanlı frontend; ASP.NET Core Web API üzerinden SQL Server veritabanıyla haberleşir. Tasarımlar ve tasarıma bağlı mobilyalar veritabanında kalıcı olarak saklanır, daha sonra tekrar açılabilir, düzenlenebilir, kopyalanabilir, yeniden adlandırılabilir ve silinebilir.
@@ -204,35 +210,35 @@ RoomCraft'ın amacı, temel yetenekleri ve çalışma akışını açıklayan ü
 
 ## Frontend
 
-| Teknoloji | Kullanım Amacı |
-|---|---|
-| React 19 | Component tabanlı kullanıcı arayüzü ve state yönetimi |
-| JavaScript ES Modules | Uygulama mantığı |
-| Vite 8 | Development server ve production build |
-| Bootstrap 5.3 | Modal, alert/toast ve responsive yardımcı sınıflar |
-| CSS | Özel tasarım sistemi, grid, responsive görünüm ve component stilleri |
-| Lucide React | Arayüz ikonları |
-| React Icons | Ek ikon desteği |
-| Fetch API | Frontend → backend HTTP iletişimi |
+| Teknoloji             | Kullanım Amacı                                                       |
+| --------------------- | -------------------------------------------------------------------- |
+| React 19              | Component tabanlı kullanıcı arayüzü ve state yönetimi                |
+| JavaScript ES Modules | Uygulama mantığı                                                     |
+| Vite 8                | Development server ve production build                               |
+| Bootstrap 5.3         | Modal, alert/toast ve responsive yardımcı sınıflar                   |
+| CSS                   | Özel tasarım sistemi, grid, responsive görünüm ve component stilleri |
+| Lucide React          | Arayüz ikonları                                                      |
+| React Icons           | Ek ikon desteği                                                      |
+| Fetch API             | Frontend → backend HTTP iletişimi                                    |
 
 ## Backend
 
-| Teknoloji | Kullanım Amacı |
-|---|---|
-| ASP.NET Core Web API | REST API katmanı |
-| .NET 10 | Backend runtime ve framework |
-| C# | Backend iş ve veri erişim mantığı |
-| Microsoft.Data.SqlClient | SQL Server bağlantısı |
-| ADO.NET | Manuel SQL sorguları ve veri erişimi |
-| OpenAPI | Development ortamında API şeması |
+| Teknoloji                | Kullanım Amacı                       |
+| ------------------------ | ------------------------------------ |
+| ASP.NET Core Web API     | REST API katmanı                     |
+| .NET 10                  | Backend runtime ve framework         |
+| C#                       | Backend iş ve veri erişim mantığı    |
+| Microsoft.Data.SqlClient | SQL Server bağlantısı                |
+| ADO.NET                  | Manuel SQL sorguları ve veri erişimi |
+| OpenAPI                  | Development ortamında API şeması     |
 
 ## Veritabanı
 
-| Teknoloji | Kullanım Amacı |
-|---|---|
+| Teknoloji            | Kullanım Amacı                                      |
+| -------------------- | --------------------------------------------------- |
 | Microsoft SQL Server | Tasarım ve mobilya verilerini kalıcı olarak saklama |
-| SQL Server Express | Projedeki varsayılan local SQL Server instance'ı |
-| T-SQL | Tablo, ilişki ve CRUD sorguları |
+| SQL Server Express   | Projedeki varsayılan local SQL Server instance'ı    |
+| T-SQL                | Tablo, ilişki ve CRUD sorguları                     |
 
 ---
 
@@ -317,25 +323,25 @@ const [furnitureItems, setFurnitureItems] = useState([]);
 
 Planner içinde kullanılan başlıca state'ler:
 
-| State | Açıklama |
-|---|---|
-| `room` | Tasarım adı, oda türü, ölçüler ve renkler |
-| `furnitureItems` | Odaya eklenen bütün mobilyalar |
-| `selectedFurnitureId` | Seçili mobilyanın benzersiz UI ID'si |
-| `snapToGrid` | 10 cm grid'e yapışmanın açık/kapalı durumu |
-| `budget` | Kullanıcının belirlediği maksimum bütçe |
-| `isSaving` | Save işlemi sırasında buton durumunu kontrol eder |
-| `pastFurnitureStates` | Undo geçmişi |
-| `futureFurnitureStates` | Redo geçmişi |
-| `zoomLevel` | Görsel zoom yüzdesi |
-| `activeDesignId` | O an üzerinde çalışılan DB tasarım ID'si |
-| `notification` | Kullanıcı bildirim bilgisi |
+| State                   | Açıklama                                          |
+| ----------------------- | ------------------------------------------------- |
+| `room`                  | Tasarım adı, oda türü, ölçüler ve renkler         |
+| `furnitureItems`        | Odaya eklenen bütün mobilyalar                    |
+| `selectedFurnitureId`   | Seçili mobilyanın benzersiz UI ID'si              |
+| `snapToGrid`            | 10 cm grid'e yapışmanın açık/kapalı durumu        |
+| `budget`                | Kullanıcının belirlediği maksimum bütçe           |
+| `isSaving`              | Save işlemi sırasında buton durumunu kontrol eder |
+| `pastFurnitureStates`   | Undo geçmişi                                      |
+| `futureFurnitureStates` | Redo geçmişi                                      |
+| `zoomLevel`             | Görsel zoom yüzdesi                               |
+| `activeDesignId`        | O an üzerinde çalışılan DB tasarım ID'si          |
+| `notification`          | Kullanıcı bildirim bilgisi                        |
 
 Derived data örnekleri:
 
 ```js
 const selectedFurniture = furnitureItems.find(
-    item => item.id === selectedFurnitureId
+  (item) => item.id === selectedFurnitureId,
 );
 
 const furnitureCount = furnitureItems.length;
@@ -377,9 +383,9 @@ olur. Ancak büyük odalarda çalışma alanının taşmaması için `RoomCanvas
 
 ```js
 const fitScale = Math.min(
-    BASE_SCALE,
-    MAX_ROOM_WIDTH / room.width,
-    MAX_ROOM_HEIGHT / room.height
+  BASE_SCALE,
+  MAX_ROOM_WIDTH / room.width,
+  MAX_ROOM_HEIGHT / room.height,
 );
 ```
 
@@ -580,9 +586,9 @@ Döndürme sonrası yeni ölçü odaya sığmıyorsa işlem uygulanmaz. Sığıy
 
 ```js
 firstItem.x < secondItem.x + secondItem.width &&
-firstItem.x + firstItem.width > secondItem.x &&
-firstItem.y < secondItem.y + secondItem.height &&
-firstItem.y + firstItem.height > secondItem.y
+  firstItem.x + firstItem.width > secondItem.x &&
+  firstItem.y < secondItem.y + secondItem.height &&
+  firstItem.y + firstItem.height > secondItem.y;
 ```
 
 koşullarının tamamı sağlanmalıdır. `getCollidingFurnitureIds()` bütün mobilya çiftlerini kontrol ederek çakışan ID'leri `Set` içinde toplar. Sonuç:
@@ -696,16 +702,16 @@ const MAX_HISTORY = 50;
 
 Planner global `keydown` event listener kullanır.
 
-| Kısayol | İşlem |
-|---|---|
-| `↑ ↓ ← →` | Seçili mobilyayı 10 cm hareket ettir |
+| Kısayol            | İşlem                                |
+| ------------------ | ------------------------------------ |
+| `↑ ↓ ← →`          | Seçili mobilyayı 10 cm hareket ettir |
 | `Shift + yön tuşu` | Seçili mobilyayı 50 cm hareket ettir |
-| `Delete` | Seçili mobilyayı sil |
-| `R` | 90° döndür |
-| `Ctrl + D` | Mobilyayı kopyala |
-| `Ctrl + Z` | Geri al |
-| `Ctrl + Y` | İleri al |
-| `Escape` | Seçimi kaldır |
+| `Delete`           | Seçili mobilyayı sil                 |
+| `R`                | 90° döndür                           |
+| `Ctrl + D`         | Mobilyayı kopyala                    |
+| `Ctrl + Z`         | Geri al                              |
+| `Ctrl + Y`         | İleri al                             |
+| `Escape`           | Seçimi kaldır                        |
 
 Input, textarea, select veya contenteditable alanında yazı yazılırken bu global kısayollar çalıştırılmaz.
 
@@ -716,7 +722,7 @@ Input, textarea, select veya contenteditable alanında yazı yazılırken bu glo
 Desteklenen zoom seviyeleri:
 
 ```js
-[50, 75, 100, 125, 150]
+[50, 75, 100, 125, 150];
 ```
 
 Zoom yalnızca görsel ölçeği değiştirir. Mobilyaların gerçek santimetre koordinatları değişmez. Toolbar üzerinden:
@@ -737,10 +743,7 @@ Hesaplama fonksiyonları `src/utils/calculations.js` içinde UI'dan ayrılmışt
 ## Ara toplam
 
 ```js
-furnitureItems.reduce(
-    (total, item) => total + Number(item.price || 0),
-    0
-);
+furnitureItems.reduce((total, item) => total + Number(item.price || 0), 0);
 ```
 
 ## Toplam
@@ -773,12 +776,12 @@ Bütçe aşıldığında:
 
 Şablonlar `src/data/roomTemplates.js` içinde tanımlanmıştır.
 
-| Şablon | Ölçü | Alan | Başlangıç Mobilya Sayısı |
-|---|---:|---:|---:|
-| Küçük Yatak Odası | 3 × 3 m | 9 m² | 4 |
-| Çalışma Odası | 3 × 3.5 m | 10.5 m² | 4 |
-| Salon | 4 × 4.5 m | 18 m² | 6 |
-| Ofis | 4 × 5 m | 20 m² | 6 |
+| Şablon            |      Ölçü |    Alan | Başlangıç Mobilya Sayısı |
+| ----------------- | --------: | ------: | -----------------------: |
+| Küçük Yatak Odası |   3 × 3 m |    9 m² |                        4 |
+| Çalışma Odası     | 3 × 3.5 m | 10.5 m² |                        4 |
+| Salon             | 4 × 4.5 m |   18 m² |                        6 |
+| Ofis              |   4 × 5 m |   20 m² |                        6 |
 
 Bir şablon seçildiğinde:
 
@@ -805,7 +808,7 @@ Gerçek kayıtlı tasarımlar SQL Server'dan yüklenir.
 `getAllDesigns()` ile tasarımlar getirilir. Mobilya sayısı için her tasarımın mobilyaları `getFurnitureByDesignId()` ile alınır ve:
 
 ```js
-furnitureCount: furniture.length
+furnitureCount: furniture.length;
 ```
 
 olarak kart verisine eklenir.
@@ -1026,23 +1029,23 @@ http://localhost:5243
 
 ## Designs
 
-| Method | Endpoint | Açıklama |
-|---|---|---|
-| GET | `/api/designs` | Tüm tasarımları getirir |
-| GET | `/api/designs/{id}` | Tek tasarımı getirir |
-| POST | `/api/designs` | Sadece design kaydı oluşturur |
-| PUT | `/api/designs/{id}` | Design metadata'sını günceller |
-| DELETE | `/api/designs/{id}` | Tasarımı siler |
-| POST | `/api/designs/complete` | Yeni tasarım + mobilyaları transaction ile kaydeder |
-| PUT | `/api/designs/{id}/complete` | Mevcut tasarım + mobilyaları transaction ile günceller |
+| Method | Endpoint                     | Açıklama                                               |
+| ------ | ---------------------------- | ------------------------------------------------------ |
+| GET    | `/api/designs`               | Tüm tasarımları getirir                                |
+| GET    | `/api/designs/{id}`          | Tek tasarımı getirir                                   |
+| POST   | `/api/designs`               | Sadece design kaydı oluşturur                          |
+| PUT    | `/api/designs/{id}`          | Design metadata'sını günceller                         |
+| DELETE | `/api/designs/{id}`          | Tasarımı siler                                         |
+| POST   | `/api/designs/complete`      | Yeni tasarım + mobilyaları transaction ile kaydeder    |
+| PUT    | `/api/designs/{id}/complete` | Mevcut tasarım + mobilyaları transaction ile günceller |
 
 ## Furniture
 
-| Method | Endpoint | Açıklama |
-|---|---|---|
-| GET | `/api/furniture/design/{designId}` | Tasarıma ait mobilyaları getirir |
-| POST | `/api/furniture` | Tek mobilya ekler |
-| DELETE | `/api/furniture/design/{designId}` | Tasarıma ait mobilyaları siler |
+| Method | Endpoint                           | Açıklama                         |
+| ------ | ---------------------------------- | -------------------------------- |
+| GET    | `/api/furniture/design/{designId}` | Tasarıma ait mobilyaları getirir |
+| POST   | `/api/furniture`                   | Tek mobilya ekler                |
+| DELETE | `/api/furniture/design/{designId}` | Tasarıma ait mobilyaları siler   |
 
 Ana Planner save akışında `complete` endpointleri kullanılmaktadır.
 
@@ -1094,39 +1097,39 @@ RoomCraftDb
 
 ## `Designs`
 
-| Alan | Tip | Açıklama |
-|---|---|---|
-| Id | INT IDENTITY PK | Tasarım ID |
-| DesignName | NVARCHAR(100) | Tasarım adı |
-| RoomType | NVARCHAR(50) | Oda türü |
-| RoomWidth | DECIMAL(5,2) | Oda genişliği |
-| RoomHeight | DECIMAL(5,2) | Oda yüksekliği |
-| WallColor | NVARCHAR(20) | Duvar rengi |
-| FloorColor | NVARCHAR(20) | Zemin rengi |
-| Budget | DECIMAL(18,2) | Maksimum bütçe |
-| TotalCost | DECIMAL(18,2) | Toplam mobilya maliyeti |
-| CreatedAt | DATETIME2 | Oluşturulma zamanı |
-| UpdatedAt | DATETIME2 | Son güncelleme zamanı |
+| Alan       | Tip             | Açıklama                |
+| ---------- | --------------- | ----------------------- |
+| Id         | INT IDENTITY PK | Tasarım ID              |
+| DesignName | NVARCHAR(100)   | Tasarım adı             |
+| RoomType   | NVARCHAR(50)    | Oda türü                |
+| RoomWidth  | DECIMAL(5,2)    | Oda genişliği           |
+| RoomHeight | DECIMAL(5,2)    | Oda yüksekliği          |
+| WallColor  | NVARCHAR(20)    | Duvar rengi             |
+| FloorColor | NVARCHAR(20)    | Zemin rengi             |
+| Budget     | DECIMAL(18,2)   | Maksimum bütçe          |
+| TotalCost  | DECIMAL(18,2)   | Toplam mobilya maliyeti |
+| CreatedAt  | DATETIME2       | Oluşturulma zamanı      |
+| UpdatedAt  | DATETIME2       | Son güncelleme zamanı   |
 
 ## `FurnitureItems`
 
-| Alan | Tip | Açıklama |
-|---|---|---|
-| Id | INT IDENTITY PK | DB mobilya ID |
-| DesignId | INT FK | Mobilyanın bağlı olduğu tasarım |
-| CatalogId | NVARCHAR(100) | Frontend katalog kimliği |
-| Name | NVARCHAR(100) | Mobilya adı |
-| Type | NVARCHAR(50) | Mobilya türü |
-| Category | NVARCHAR(50) | Kategori |
-| X | DECIMAL(10,2) | X koordinatı (cm) |
-| Y | DECIMAL(10,2) | Y koordinatı (cm) |
-| Width | DECIMAL(10,2) | Genişlik (cm) |
-| Height | DECIMAL(10,2) | Yükseklik (cm) |
-| Rotation | INT | Dönüş açısı |
-| Price | DECIMAL(18,2) | Mobilya fiyatı |
-| ZIndex | INT | Katman sırası |
-| IsLocked | BIT | Kilit durumu |
-| WallSide | NVARCHAR(20) | Kapı/pencere duvar bilgisi |
+| Alan      | Tip             | Açıklama                        |
+| --------- | --------------- | ------------------------------- |
+| Id        | INT IDENTITY PK | DB mobilya ID                   |
+| DesignId  | INT FK          | Mobilyanın bağlı olduğu tasarım |
+| CatalogId | NVARCHAR(100)   | Frontend katalog kimliği        |
+| Name      | NVARCHAR(100)   | Mobilya adı                     |
+| Type      | NVARCHAR(50)    | Mobilya türü                    |
+| Category  | NVARCHAR(50)    | Kategori                        |
+| X         | DECIMAL(10,2)   | X koordinatı (cm)               |
+| Y         | DECIMAL(10,2)   | Y koordinatı (cm)               |
+| Width     | DECIMAL(10,2)   | Genişlik (cm)                   |
+| Height    | DECIMAL(10,2)   | Yükseklik (cm)                  |
+| Rotation  | INT             | Dönüş açısı                     |
+| Price     | DECIMAL(18,2)   | Mobilya fiyatı                  |
+| ZIndex    | INT             | Katman sırası                   |
+| IsLocked  | BIT             | Kilit durumu                    |
+| WallSide  | NVARCHAR(20)    | Kapı/pencere duvar bilgisi      |
 
 ## İlişki
 
