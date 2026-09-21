@@ -1,2 +1,5 @@
 CREATE DATABASE RoomCraftDb;
 GO
+
+USE RoomCraftDb;
+GO
