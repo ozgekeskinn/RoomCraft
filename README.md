@@ -1,10 +1,4 @@
-<div align="center">
-  <img src="src/assets/images/logo.png" width="420" />
-
-  <h1>RoomCraft – Interactive Room Planner</h1>
-</div>
-
----
+# RoomCraft – Interactive Room Planner
 
 RoomCraft, kullanıcıların gerçek oda ölçülerine göre oda planı oluşturabildiği, mobilyaları kuş bakışı çalışma alanına ekleyip sürükleyebildiği, yeniden boyutlandırabildiği, döndürebildiği, katmanlarını yönetebildiği ve tasarım maliyetini bütçeyle birlikte takip edebildiği **full-stack bir oda yerleşim planlama uygulamasıdır**.
 Proje yalnızca görsel bir arayüzden oluşmaz. React tabanlı frontend; ASP.NET Core Web API üzerinden SQL Server veritabanıyla haberleşir. Tasarımlar ve tasarıma bağlı mobilyalar veritabanında kalıcı olarak saklanır, daha sonra tekrar açılabilir, düzenlenebilir, kopyalanabilir, yeniden adlandırılabilir ve silinebilir.
