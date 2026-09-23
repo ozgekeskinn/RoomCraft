@@ -27,3 +27,8 @@ RoomCraft_Teknik_Calisma_Notlari_README.md
 # .NET build files
 **/bin/
 **/obj/publish/
+
+# Local build and publish outputs
+publish/
+**/obj/
+**/bin/
